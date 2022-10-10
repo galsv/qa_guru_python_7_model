@@ -15,11 +15,12 @@ def test_submit_student_registration_form():
     registration_form.set_date_of_birthday(user.date)
     registration_form.add_subjects(user.subjects)
     registration_form.select_hobbies_cb(user.hobbies)
-    controls.upload.picture_up(user.picture_file)
+    registration_form.upload_picture(user.picture_file)
     registration_form.set_current_address(user.current_address)
     registration_form.scroll_to_bottom()
     registration_form.set_state(user.state)
     registration_form.set_city(user.city)
+
     controls.submit.click_sbmt()
 
     registration_form.should_have_submitted(

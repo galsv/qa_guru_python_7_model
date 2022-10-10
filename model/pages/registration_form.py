@@ -1,7 +1,7 @@
 from selene import command, have
 from selene.support.shared import browser
 from selene.support.shared.jquery_style import ss
-from model.controls import input, dropdown, modal
+from model.controls import input, dropdown, modal, upload
 from typing import Tuple
 from tests.test_data.users import Subject, Hobby
 
@@ -47,6 +47,9 @@ def select_hobbies_cb(values: Tuple[Hobby]):
             '..'
         ).click()
 
+
+def upload_picture(value: str):
+    upload.picture_up('#uploadPicture', value)
 
 def set_current_address(value: str):
     input.type_by_id('#currentAddress', value)
